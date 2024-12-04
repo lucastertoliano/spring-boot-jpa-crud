@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unifacisa.Ouvidoria.entity.Manifestacao;
-import com.unifacisa.Ouvidoria.service.ManifestacaoService;
+import com.unifacisa.Ouvidoria.entity.Descricao;
+import com.unifacisa.Ouvidoria.service.DescricaoService;
 
 @RestController
-@RequestMapping("/manifestacoes")
-public class ManifestacaoController {
+@RequestMapping("/descricoes")
+public class DescricaoController {
 
 	@Autowired
-	private ManifestacaoService manifestacaoService;
+	private DescricaoService descricaoService;
 	
 	@GetMapping
-	public List<Manifestacao> listarManifestacoes() {
-		return manifestacaoService.listar();
+	public List<Descricao> listarDescricoes() {
+		return descricaoService.listar();
 	}
 	
 	@PostMapping
-	public Manifestacao criarManifestacao(@RequestBody Manifestacao manifestacao) {
-		return manifestacaoService.salvar(manifestacao);
+	public Descricao criarDescricao(@RequestBody Descricao descricao) {
+		return descricaoService.salvar(descricao);
 	}
 }
