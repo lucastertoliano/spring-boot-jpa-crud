@@ -16,7 +16,7 @@ public class Descricao {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 	
-	private String text;
+	private String texto;
 	
 	@OneToOne
 	@JoinColumn(name = "manifestacao_id")
@@ -31,11 +31,19 @@ public class Descricao {
 		this.id = id;
 	}
 
-	public String getText() {
-		return text;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+	public Manifestacao getManifestacao() {
+		return manifestacao;
+	}
+
+	public void setManifestacao(Manifestacao manifestacao) {
+		this.manifestacao = manifestacao;
 	}	
 }
