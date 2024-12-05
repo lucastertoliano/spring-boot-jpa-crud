@@ -21,4 +21,13 @@ public class TipoService {
 	public Tipo salvar(Tipo tipo) {
 		return tipoRepository.save(tipo);
 	}
+	
+	public void deletar(long id ) {
+		if(tipoRepository.existsById(id)) {
+			tipoRepository.deleteById(id);
+		} else {
+			throw new RuntimeException("Tipo não encontrada com ID " + id);
+		}
+	}
 }
+

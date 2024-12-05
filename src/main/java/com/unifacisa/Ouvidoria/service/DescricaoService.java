@@ -21,4 +21,12 @@ public class DescricaoService {
 	public Descricao salvar(Descricao descricao) {
 		return descricaoRepository.save(descricao);
 	}
+	
+	public void deletar(long id ) {
+		if(descricaoRepository.existsById(id)) {
+			descricaoRepository.deleteById(id);
+		} else {
+			throw new RuntimeException("Tipo não encontrada com ID " + id);
+		}
+	}
 }

@@ -21,4 +21,12 @@ public class UsuarioService {
 	public Usuario salvar(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
+	
+	public void deletar(long id ) {
+		if(usuarioRepository.existsById(id)) {
+			usuarioRepository.deleteById(id);
+		} else {
+			throw new RuntimeException("Tipo não encontrada com ID " + id);
+		}
+	}
 }

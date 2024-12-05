@@ -21,4 +21,12 @@ public class ManifestacaoService {
 	public Manifestacao salvar(Manifestacao manifestacao) {
 		return manifestacaoRepository.save(manifestacao);
 	}
+	
+	public void deletar(long id ) {
+		if(manifestacaoRepository.existsById(id)) {
+			manifestacaoRepository.deleteById(id);
+		} else {
+			throw new RuntimeException("Manifestação não encontrada com ID " + id);
+		}
+	}
 }
